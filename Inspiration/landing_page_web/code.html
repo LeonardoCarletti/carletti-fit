@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carletti Fit | Scale your coaching with AI-powered precision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#c1c6d7",
+              "on-secondary-container": "#bab8b7",
+              "surface-container-high": "#2a2a2a",
+              "on-secondary-fixed": "#1c1b1b",
+              "surface-container-low": "#1c1b1b",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#c8c6c5",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#313030",
+              "on-tertiary-fixed-variant": "#005226",
+              "on-tertiary-container": "#003114",
+              "on-primary-fixed-variant": "#003ea6",
+              "primary-fixed": "#dbe1ff",
+              "on-error-container": "#ffdad6",
+              "tertiary-container": "#00a754",
+              "on-primary-container": "#002468",
+              "secondary-fixed": "#e5e2e1",
+              "secondary-container": "#4a4949",
+              "surface-dim": "#131313",
+              "on-surface": "#e5e2e1",
+              "on-background": "#e5e2e1",
+              "surface": "#131313",
+              "tertiary-fixed-dim": "#00e475",
+              "inverse-surface": "#e5e2e1",
+              "inverse-primary": "#0054d8",
+              "surface-variant": "#353534",
+              "on-primary-fixed": "#00184a",
+              "error-container": "#93000a",
+              "background": "#131313",
+              "secondary": "#c8c6c5",
+              "primary-fixed-dim": "#b3c5ff",
+              "surface-tint": "#b3c5ff",
+              "outline-variant": "#414754",
+              "surface-bright": "#393939",
+              "tertiary": "#00e475",
+              "surface-container": "#201f1f",
+              "on-primary": "#002a76",
+              "on-secondary": "#313030",
+              "surface-container-highest": "#353534",
+              "on-tertiary": "#003918",
+              "outline": "#8b90a0",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed-variant": "#474646",
+              "primary-container": "#5f8bff",
+              "primary": "#b3c5ff",
+              "tertiary-fixed": "#62ff96",
+              "on-tertiary-fixed": "#00210b"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(19, 19, 19, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-[100] bg-[#131313] dark:bg-[#131313] flex justify-between items-center px-6 py-3 border-none font-manrope text-sm font-medium">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tight text-white">Carletti Fit</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-white font-bold transition-colors" href="#">Home</a>
+<a class="text-gray-400 hover:bg-[#252525] transition-colors px-3 py-1 rounded-lg" href="#features">Features</a>
+<a class="text-gray-400 hover:bg-[#252525] transition-colors px-3 py-1 rounded-lg" href="#how-it-works">How It Works</a>
+<a class="text-gray-400 hover:bg-[#252525] transition-colors px-3 py-1 rounded-lg" href="#testimonials">Success Stories</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-gray-400 hover:text-white px-4 py-2 transition-all">Log In</button>
+<button class="bg-gradient-to-tr from-[#5f8bff] to-[#b3c5ff] text-on-primary-container px-5 py-2 rounded-xl font-bold hover:scale-105 active:scale-95 transition-all">Start Free Trial</button>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden px-6">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-[#131313]/20 via-[#131313]/80 to-[#131313] z-10"></div>
+<img class="w-full h-full object-cover grayscale-[0.4]" data-alt="Intense athlete performing a heavy barbell squat in a moody dark gym with cinematic blue rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa82BW8_Uqy2hWJ2ugKmh9ieEtqSP9XHbW9poOVAFuvnLp-Y8gcizKPN3x0Quk_cSMaKqVAU4RHkg5MCHr6tuTeUP8V1ZF5oBDgd83wRvyOsojVmt-bNQ_V4d0PzcJEJl6KpatDW8HkfjPlSdJOY6IXQzxuI32efCSM6gPv8f3OxuNcM-GfzPSgteo8HBmsW79E6Gohi6ScZE3lIgE6KFAb2nnRXkVEXUxy6ivQT5WQllsbRypBcYyX5HcX6rerGI9F3uBu0bnccc"/>
+</div>
+<div class="relative z-20 max-w-5xl text-center space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high border border-outline-variant/20 mb-4">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Trusted by 500+ Elite Coaches</span>
+</div>
+<h1 class="text-5xl md:text-8xl font-headline font-extrabold tracking-tighter text-white leading-[0.9]">
+                    Scale your coaching with <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">AI-powered precision.</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-body">
+                    The ultimate SaaS ecosystem for performance professionals. Automate your workflow, track every metric, and deliver world-class results at scale.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+<button class="w-full sm:w-auto px-8 py-4 bg-primary text-on-primary font-bold rounded-xl text-lg hover:shadow-[0_0_30px_rgba(95,139,255,0.4)] transition-all">Start Your Journey</button>
+<button class="w-full sm:w-auto px-8 py-4 bg-surface-container-highest border border-outline-variant/30 text-white font-bold rounded-xl text-lg hover:bg-surface-bright transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_circle</span> Request Demo
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid Features Section -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="features">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Card -->
+<div class="md:col-span-8 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between overflow-hidden relative group">
+<div class="relative z-10 max-w-md">
+<span class="text-tertiary font-label uppercase tracking-widest text-xs font-bold mb-4 block">Engineered Intelligence</span>
+<h2 class="text-4xl font-headline font-bold text-white mb-6">AI-Driven Insights for Peak Performance.</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                            Our proprietary neural engine analyzes thousands of data points to predict plateauing and suggest optimal load adjustments before your athletes even hit the gym.
+                        </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">check_circle</span>
+<span class="text-sm font-medium">Predictive Fatigue Modeling</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">check_circle</span>
+<span class="text-sm font-medium">Automated Progression Logic</span>
+</li>
+</ul>
+</div>
+<div class="absolute right-[-10%] bottom-[-5%] w-2/3 h-2/3 opacity-40 group-hover:scale-110 transition-transform duration-700">
+<img class="rounded-3xl shadow-2xl" data-alt="Sleek dark mode analytics dashboard showing performance graphs and heart rate data in electric blue and green" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdvjg5NWLx4obgFLrbjGvwmZL7LNhjB5a-kY_AxrjIizrzqxHepEg9EilzmgyjmFq91-113IwUG487-DLTZG_KlDb2Kmv6VBaSEVQgg74z_POtUZ6k-2EjMZ6Gq77Qbrv4KHFIxv8FiirhEJ4LblWWSoq_IC1LHPuzC7Iwm2bWuZznCfw5gCzrmjoicNGuziqU_D8-m95UMLebjgUgzn_-DSM9_eW2Tm3jVv1oL5XQRGk5UhJRS59EMktNjRh6PWbBdwI2XqEGTFQ"/>
+</div>
+</div>
+<!-- Tall Card -->
+<div class="md:col-span-4 bg-surface-container rounded-[2rem] p-10 flex flex-col border border-outline-variant/10">
+<div class="bg-primary/10 w-14 h-14 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">smartphone</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-white mb-4">Elite Athlete App</h3>
+<p class="text-on-surface-variant text-sm mb-10 leading-relaxed">
+                        A seamless mobile experience for your students. High-definition video demos, real-time logging, and instant communication with their coach.
+                    </p>
+<div class="mt-auto">
+<img class="w-full rounded-2xl object-cover h-48" data-alt="Close up of a premium smartphone displaying a sleek dark fitness tracking application with vibrant activity rings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7VJBjeWGBK3Per1X8P_V8ff3JLy-6Fxwi77yfGevica1WHz9IWbj-yCz8nP_Q6WCf1gxO8j4vIfHE8ufAPi-lKul8Sr8hOyI1YW6xCijastHl08uwsZZOAei77ApcS1nn9Do1rPC1B9JqcICYQKShtn4GU9oA99acLiImZt85JgQHcpbj3mZxlxf1pP6Iq0CU2tyWXlI8gPOD1ZNr_2sGTprprqYlPJWpv_sJHejw-H7bspzBSFkHsjsgNriXjr3nMqiYpwioJl8"/>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="md:col-span-4 bg-surface-container-high rounded-[2rem] p-10 hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-4xl mb-6">query_stats</span>
+<h3 class="text-xl font-headline font-bold text-white mb-3">Metric Precision</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Track everything from HRV to velocity-based training. No more spreadsheets, just pure actionable data.
+                    </p>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-4 bg-surface-container-high rounded-[2rem] p-10 hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl mb-6">branding_watermark</span>
+<h3 class="text-xl font-headline font-bold text-white mb-3">Multi-Tenant Branding</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Your brand, front and center. Custom domains, white-labeled apps, and personalized athlete portals.
+                    </p>
+</div>
+<!-- Feature 5 -->
+<div class="md:col-span-4 bg-surface-container-high rounded-[2rem] p-10 hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-error text-4xl mb-6">bolt</span>
+<h3 class="text-xl font-headline font-bold text-white mb-3">Automated Scaling</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Manage 10 or 1,000 clients with the same level of care. Let AI handle the admin while you focus on the coaching.
+                    </p>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden" id="how-it-works">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-4">Precision Workflow</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">From onboarding to podium finishes, we provide the infrastructure for excellence.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-12">
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center font-bold text-primary group-hover:bg-primary group-hover:text-on-primary transition-all">01</div>
+<div>
+<h4 class="text-xl font-headline font-bold text-white mb-2">Manage</h4>
+<p class="text-on-surface-variant">Centralize all athlete communications, nutrition plans, and workout schedules in one command center.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center font-bold text-primary group-hover:bg-primary group-hover:text-on-primary transition-all">02</div>
+<div>
+<h4 class="text-xl font-headline font-bold text-white mb-2">Automate</h4>
+<p class="text-on-surface-variant">Deploy intelligent templates that adapt based on athlete feedback and real-time performance metrics.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center font-bold text-primary group-hover:bg-primary group-hover:text-on-primary transition-all">03</div>
+<div>
+<h4 class="text-xl font-headline font-bold text-white mb-2">Scale</h4>
+<p class="text-on-surface-variant">Analyze business growth analytics to optimize your pricing and maximize coaching efficiency.</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
+<img class="relative z-10 rounded-[3rem] shadow-2xl border border-outline-variant/20" data-alt="Top down view of a coach's workspace with a sleek laptop, tablet, and performance charts in a professional minimalist setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLmeVgyWREmBX6BCUcipZGinvXPW-U4T7ga8U64pRsFQlyQDv2xNxxsHhxp6LEUcoSYevVTxxuM1iylCIXVfw0NWEwaItvWc9WGEJK7VWoZy0jeXcH2o6Ct_dT-auQO_sAqu46ziOiD7dcqdyOh0d7ljAXnZyJWMpde07qJL_5WOo8g4QJJr277E6PrLFmIboSIwkQkW7XbtcHVZxurdAd7QiJvYhhjEiTK_pjEqQUm4iYIJOoqHGlOr8QvBvo2P59cipKzo0kRKA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="testimonials">
+<h2 class="text-3xl font-headline font-bold text-white text-center mb-16">Endorsed by the Best</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/10">
+<div class="flex gap-1 text-tertiary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic mb-8 leading-relaxed">"Carletti Fit has completely transformed how I handle my 1-on-1 clients. The AI insights caught a major recovery issue with one of my pro athletes that I would have missed manually."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Professional fitness coach headshot with focused expression and athletic apparel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIG1c4YsFbDivJDssPhZhjl8RXfOwLUcbXtj4bcHizlC5XXD2C8d-JVtMfAGA7hr6BY4AUHvtDRgL7Jlg3oYWQ-vFjNZR1MKrSfFjBM7PD5qGhVa8Yni0kxoECmpxIEaPVTDyY3Y-3uMx0cDKNCxFSMikg6qx3fYZBJEf-5AKSbVrsuPN9eJkosSZgBroyRLVH_uXWB4zAGxfk1DHADi4Tnp4whO8rm9salydWl9Psv6YJDudNatVQPLhQoYUMDr9vhMtC2zqpZYs"/>
+<div>
+<h5 class="font-bold text-white">Marcus Thorne</h5>
+<span class="text-xs text-on-surface-variant uppercase tracking-wider">Olympic Strength Coach</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/10">
+<div class="flex gap-1 text-tertiary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic mb-8 leading-relaxed">"The white-labeling is flawless. My clients feel like they are using a custom app built specifically for my methodology. It has significantly increased my brand value."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Female headshot of a boutique gym owner with a confident smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnP5hohzjOLpjngtdfLJ807-udJ4CQCVxclaLtz-UTkzSK3RszAuAxM7NtamNGzqPd5bs_jVFSSYrMqCSlx77CLJc4ZiV7I61I4tKXuUNlCX-0vAoRKEdfhUbgOfr9kiHb91mYttWB3Je2HVxacOvF8pHHFwzq_KHiB-qS16w2C-I9-8ZAEvlLQz3f1ANGxWNbEsXoIw6KxpLZKHOda4rgiAnFGxZAW72LFWBnnSRpTgzpnGeEQywTu_fj8J69FFxP4BqwdNEO6U8"/>
+<div>
+<h5 class="font-bold text-white">Elena Rodriguez</h5>
+<span class="text-xs text-on-surface-variant uppercase tracking-wider">Owner, Peak Velocity Lab</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/10">
+<div class="flex gap-1 text-tertiary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic mb-8 leading-relaxed">"The efficiency gains are undeniable. I've scaled from 30 to 120 clients without hiring additional staff. The automation is a game changer for my bottom line."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Headshot of a modern fitness entrepreneur in a casual dark shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOnhJioBwmwuF2eWlpvfTezFBkvU4OBUznFAdwDzS6TfKdnrLE0XvZchU_nLnYPhg_TkfjOz3GgL6Hbw9K3NeJpXcl9mnHfPPsmFQEwXj1OjIY2yw1I69xxy1SW52u6BnrpXAvtXEQPxdA5_Fwu__c6OtjHb92QFyQX1vko9vnAthAgyGj6ncv4aIqI-VyfS-lPtqZuG7kEjMz2BeyTYaaO_H0uTSk7GkXVcYc0Nhtoa3US71AqWVIb9bFxxY5L2_N3R4hEZcoRGY"/>
+<div>
+<h5 class="font-bold text-white">David Chen</h5>
+<span class="text-xs text-on-surface-variant uppercase tracking-wider">Performance Consultant</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-6">
+<div class="max-w-5xl mx-auto rounded-[3rem] p-12 md:p-20 relative overflow-hidden bg-surface-container">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-tertiary/10"></div>
+<div class="relative z-10 text-center">
+<h2 class="text-4xl md:text-6xl font-headline font-extrabold text-white mb-6">Ready to lead the future of fitness?</h2>
+<p class="text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Join the ranks of high-performance coaches who are leveraging AI to dominate their niche.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto px-10 py-5 bg-gradient-to-tr from-[#5f8bff] to-[#b3c5ff] text-on-primary-container font-extrabold rounded-2xl text-xl shadow-xl hover:scale-105 transition-all">Start Your Free Trial</button>
+<button class="w-full sm:w-auto px-10 py-5 bg-transparent border-2 border-outline text-white font-bold rounded-2xl text-xl hover:bg-white/5 transition-all">Schedule a Demo</button>
+</div>
+<p class="mt-8 text-sm text-gray-500">No credit card required. 14-day full access.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim pt-20 pb-10 px-6 border-t border-outline-variant/5">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-20">
+<div class="col-span-2">
+<span class="text-2xl font-black text-white mb-6 block tracking-tight">Carletti Fit</span>
+<p class="text-on-surface-variant max-w-xs text-sm leading-relaxed mb-8">
+                        The sophisticated choice for professional coaches who demand precision, efficiency, and elite performance analytics.
+                    </p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">podcasts</span></a>
+</div>
+</div>
+<div>
+<h6 class="text-white font-bold mb-6 text-sm">Product</h6>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-white transition-colors" href="#">Features</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Integrations</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Pricing</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Changelog</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-white font-bold mb-6 text-sm">Company</h6>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-white transition-colors" href="#">About</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Partners</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-white font-bold mb-6 text-sm">Resources</h6>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-white transition-colors" href="#">Community</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Webinars</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Status</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-white font-bold mb-6 text-sm">Legal</h6>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-white transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-outline-variant/10 text-[10px] text-gray-600 uppercase tracking-widest font-label">
+<p>© 2024 CARLETTI FIT ELITE. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8 mt-4 md:mt-0">
+<span>Precision by Design</span>
+<span>Performance by Data</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Mobile Navigation Shell (Bottom Nav) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/60 backdrop-blur-xl rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
+<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#5f8bff] to-[#b3c5ff] text-white rounded-2xl p-2 px-4 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-inter text-[10px] uppercase tracking-wider mt-1">Today</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 p-2 hover:text-white transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-inter text-[10px] uppercase tracking-wider mt-1">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 p-2 hover:text-white transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-inter text-[10px] uppercase tracking-wider mt-1">Plan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 p-2 hover:text-white transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] uppercase tracking-wider mt-1">Profile</span>
+</a>
+</div>
+</body></html>

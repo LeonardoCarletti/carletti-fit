@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carletti Fit - Client Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#c1c6d7",
+                        "on-secondary-container": "#bab8b7",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#005226",
+                        "on-tertiary-container": "#003114",
+                        "on-primary-fixed-variant": "#003ea6",
+                        "primary-fixed": "#dbe1ff",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#00a754",
+                        "on-primary-container": "#002468",
+                        "secondary-fixed": "#e5e2e1",
+                        "secondary-container": "#4a4949",
+                        "surface-dim": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "on-background": "#e5e2e1",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#00e475",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#0054d8",
+                        "surface-variant": "#353534",
+                        "on-primary-fixed": "#00184a",
+                        "error-container": "#93000a",
+                        "background": "#131313",
+                        "secondary": "#c8c6c5",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "surface-tint": "#b3c5ff",
+                        "outline-variant": "#414754",
+                        "surface-bright": "#393939",
+                        "tertiary": "#00e475",
+                        "surface-container": "#201f1f",
+                        "on-primary": "#002a76",
+                        "on-secondary": "#313030",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary": "#003918",
+                        "outline": "#8b90a0",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-fixed-variant": "#474646",
+                        "primary-container": "#5f8bff",
+                        "primary": "#b3c5ff",
+                        "tertiary-fixed": "#62ff96",
+                        "on-tertiary-fixed": "#00210b"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353534;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary-container">
+<!-- SideNavBar (The Anchor) -->
+<aside class="bg-[#1c1c1c] dark:bg-[#1c1c1c] h-full w-64 fixed left-0 top-0 flex flex-col h-screen p-4 z-50">
+<div class="mb-10 px-2 flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary-container to-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-white font-headline tracking-tight">Coach Portal</h1>
+<p class="text-[10px] text-gray-500 font-semibold uppercase tracking-widest">Carletti Fit Elite</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 font-manrope font-semibold hover:text-white hover:bg-[#252525] transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-white bg-[#252525] rounded-lg font-manrope font-semibold transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Clients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 font-manrope font-semibold hover:text-white hover:bg-[#252525] transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span>AI Insights</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 font-manrope font-semibold hover:text-white hover:bg-[#252525] transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span>Library</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<button class="w-full bg-gradient-to-tr from-primary-container to-primary text-on-primary-container py-3 rounded-xl font-headline font-bold text-sm flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg">add</span>
+                New Program
+            </button>
+<div class="mt-6 flex items-center gap-3 px-2">
+<img class="w-10 h-10 rounded-full object-cover grayscale brightness-110" data-alt="close-up portrait of a professional athletic coach with short hair and determined expression in a dimly lit high-end gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOk-5fG0OgWYiJE-dt84SQ8ylElxTr6HQXJMPsMVQtiyuJ0uzzMWRk3h0YW3_OSDU_XFTwSoN4JwHLATDAtXqKq89tN3cOEokF9VnMxEGzxqmGtkkKHLGPVC3r83fLOmwjyBetw2ybZlaIQ5qx8aobnX4uwYUxKr0Gaixz9lbIBiUwaJlRLXR-Wp92cDfd2xchpnbfJz1O_iCbKiaVNrw638w_mpAJFjUBgs89KTbwKWx6HtY-F76TuZXNZRMLkVbBSBcQl1R0EIM"/>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-white truncate">Coach Marco</p>
+<p class="text-xs text-gray-500 truncate">Elite Tier</p>
+</div>
+<span class="material-symbols-outlined text-gray-500 text-lg">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar (Execution) -->
+<header class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center px-8 py-4 w-full sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<div class="text-2xl font-bold tracking-tight text-white font-headline">Carletti Fit</div>
+<div class="h-6 w-[1px] bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-6">
+<span class="text-gray-400 font-manrope text-sm font-medium hover:bg-[#252525] px-3 py-1.5 rounded-lg transition-colors cursor-pointer">Analytics</span>
+<span class="text-gray-400 font-manrope text-sm font-medium hover:bg-[#252525] px-3 py-1.5 rounded-lg transition-colors cursor-pointer">Finance</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg">search</span>
+<input class="bg-[#1c1c1c] border-none rounded-full pl-10 pr-4 py-2 text-sm text-on-surface w-64 focus:ring-1 focus:ring-primary/50 transition-all" placeholder="Global search..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-gray-400 hover:bg-[#252525] rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-[#131313]"></span>
+</button>
+<button class="p-2 text-gray-400 hover:bg-[#252525] rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 space-y-8 flex-1">
+<!-- Page Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div class="space-y-1">
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-white">Clients</h2>
+<p class="text-on-surface-variant font-medium">Manage and track your elite athlete roster.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex bg-surface-container-low p-1 rounded-xl">
+<button class="px-4 py-2 text-xs font-bold font-headline uppercase tracking-wider text-white bg-surface-container-high rounded-lg shadow-sm">Grid</button>
+<button class="px-4 py-2 text-xs font-bold font-headline uppercase tracking-wider text-gray-500 hover:text-white transition-colors">List</button>
+</div>
+<button class="bg-surface-bright text-white px-5 py-2.5 rounded-xl font-headline font-bold text-sm flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                        Add Client
+                    </button>
+</div>
+</div>
+<!-- Kinetic Filters Bar (No-Line Rule) -->
+<div class="bg-surface-container-low p-4 rounded-2xl flex flex-wrap items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest text-gray-500 font-bold ml-2">Status:</span>
+<select class="bg-transparent border-none text-sm font-semibold text-primary focus:ring-0 cursor-pointer py-1">
+<option>All Statuses</option>
+<option>Active</option>
+<option>At Risk</option>
+<option>Stopped</option>
+</select>
+</div>
+<div class="w-[1px] h-4 bg-outline-variant/20 hidden md:block"></div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Goal:</span>
+<select class="bg-transparent border-none text-sm font-semibold text-white focus:ring-0 cursor-pointer py-1">
+<option>Any Goal</option>
+<option>Hypertrophy</option>
+<option>Endurance</option>
+<option>Fat Loss</option>
+</select>
+</div>
+<div class="w-[1px] h-4 bg-outline-variant/20 hidden md:block"></div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Coach:</span>
+<select class="bg-transparent border-none text-sm font-semibold text-white focus:ring-0 cursor-pointer py-1">
+<option>Me (Coach Marco)</option>
+<option>Coach Sarah</option>
+<option>Coach Alex</option>
+</select>
+</div>
+<div class="ml-auto relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">filter_list</span>
+<input class="bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-2 text-xs text-on-surface w-48 focus:w-64 transition-all focus:ring-1 focus:ring-primary/30" placeholder="Search name or ID..." type="text"/>
+</div>
+</div>
+<!-- Data Table Section (Tonal Layering) -->
+<div class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-2xl">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-wider text-gray-500">Client Name</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-wider text-gray-500">Primary Goal</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-wider text-gray-500">Status</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-wider text-gray-500">Adherence</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-wider text-gray-500">Plan Expiry</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-wider text-gray-500 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<!-- Row 1: Active -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="headshot of a fit middle-aged man with short hair smiling warmly in a bright modern studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1AWBVKqGQHOVunV1yypGUlxwrb7Ll14aSoTlTiQhcIaN4j9-WhsHkcJRbllJLKgkKqOGdZaExTgKu3EF0MSa8XLmUjODUtBpExzDIEfc-I0MFrgZZmMXkE2YQjsevBaej43epKTWra1JKQrIXFNpEHyY9VoR-CyRQ-KVmg6uZ0AYDcDul3e74hYiPSEJuzr4hhML6kzu5LB1fREXwiPVgsf66beisDBtT2V3r3KkUstM1gWRzqMrJ5t8wzNo9DInxcVX0KbcW-eg"/>
+<div>
+<p class="font-headline font-bold text-white text-sm">Marcus Sterling</p>
+<p class="text-xs text-gray-500 font-medium">Joined Jan 2024</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm font-manrope font-semibold text-on-surface">Hypertrophy Elite</span>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-[10px] font-bold uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-24 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[94%]"></div>
+</div>
+<span class="text-xs font-bold font-manrope text-tertiary">94%</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm text-on-surface font-medium">Oct 12, 2024</p>
+<p class="text-[10px] text-gray-500">Sync: 2h ago</p>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all" title="View Details">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all" title="Edit Plan">
+<span class="material-symbols-outlined text-sm">edit_note</span>
+</button>
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all" title="Message">
+<span class="material-symbols-outlined text-sm">chat_bubble</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: At Risk -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="portrait of a focused young woman athlete in athletic wear looking ahead with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5qN5Ig7umnnoN5SEQ5V-dmqm2cSeilycgYzA6KuT03j-3JPc7bR6bYrBkE-sRW-Xw-T3flgDs2_BumIcZj8O738C63YB6Ffp34fGlkdlpvIk5d98YER0NxQwRzcWhiVxqeuM67oCCMUDCaER5rvaGu1JD8Vl7EWKBcq0kaVNRIDk_fi8wo1rUMot78UNGx_BC0m9RAL2ZUNu2HhTQrcq7dJIqHlM3gEAyF9ZjS_aVbhoigOhq3VbwVXdGjMkTewdmu_vAKYsC1lw"/>
+<div>
+<p class="font-headline font-bold text-white text-sm">Elena Rodriguez</p>
+<p class="text-xs text-gray-500 font-medium">Joined Feb 2024</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm font-manrope font-semibold text-on-surface">Fat Loss Focus</span>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-error-container text-on-error-container text-[10px] font-bold uppercase tracking-tighter">At Risk</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-24 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error w-[42%]"></div>
+</div>
+<span class="text-xs font-bold font-manrope text-error">42%</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm text-on-surface font-medium">Aug 29, 2024</p>
+<p class="text-[10px] text-error font-semibold">Sync: 3d ago</p>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">visibility</span></button>
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">edit_note</span></button>
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">chat_bubble</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Stopped -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-xl object-cover grayscale" data-alt="candid shot of a young man in sportswear adjusting his watch in an urban industrial gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwM57C5VR0TT5Ue2H0Cjs-E9TCYt7IF_tnNBTOuKD7IXn0c3SENIsS236pf6DwOBsKuScRcma5pe99AncRVbOGiMXdsyzYxF6lgvZ1Hlb2w5OWL4AaLCvjr6WWO70H69VfoWmCbPeGKUFWSPLj2dfx-LdiRTtkQOyJCPtQWf0qy-H_qcJiuiisugon4EegZ7Qo4E2QecpNTTMuYbkET2H68uURRaIrfuTmELtJHE77M0Wot9XpgAlSsb9n1HFkantfJJBjT0Ext0M"/>
+<div>
+<p class="font-headline font-bold text-white text-sm">Jordan Smith</p>
+<p class="text-xs text-gray-500 font-medium">Joined Dec 2023</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm font-manrope font-semibold text-on-surface">Strength &amp; Power</span>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-tighter">Stopped</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-24 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[10%]"></div>
+</div>
+<span class="text-xs font-bold font-manrope text-secondary">10%</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm text-on-surface font-medium">Expired</p>
+<p class="text-[10px] text-gray-500">Sync: 12d ago</p>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">visibility</span></button>
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">edit_note</span></button>
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">chat_bubble</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Active -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="modern aesthetic portrait of a woman looking sideways with dramatic lighting and warm tones in a fitness studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5gSDPJx7BXv2m0vPUEbJQBUiOOGhb27WY_hoCOTmT5gYHYszGGeTpaDi-nFQqAfdT88XKNIibtXLZ_aU_OATlQT1qt_YgeUtr1YcEx-5UriuIxg56v6_ylFWWwo2_2X9VFeXYvv_ipTn5DVMjWsBHMNIXo3TizQDRGTEGyyN1sKpWIjXpri3PSVD8LXMqa3tQzY4eFUg7nSUDoHHZhEujLBfHNw1EZSYnNHirFv1KLAxVZdZkMB8gcusb4Vw3VablU6wr3AE_EY4"/>
+<div>
+<p class="font-headline font-bold text-white text-sm">Sophie Chen</p>
+<p class="text-xs text-gray-500 font-medium">Joined May 2024</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm font-manrope font-semibold text-on-surface">Endurance Engine</span>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-[10px] font-bold uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-24 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[88%]"></div>
+</div>
+<span class="text-xs font-bold font-manrope text-tertiary">88%</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm text-on-surface font-medium">Nov 05, 2024</p>
+<p class="text-[10px] text-gray-500">Sync: 1h ago</p>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">visibility</span></button>
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">edit_note</span></button>
+<button class="p-2 bg-surface-container-high text-white rounded-lg hover:bg-primary hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">chat_bubble</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="px-6 py-4 bg-surface-container-low/30 flex items-center justify-between border-t border-outline-variant/5">
+<p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Showing 1-4 of 32 Clients</p>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-lg bg-surface-container-high text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<div class="flex gap-1">
+<span class="w-7 h-7 flex items-center justify-center rounded-lg bg-primary text-on-primary-container text-xs font-bold">1</span>
+<span class="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-gray-500 text-xs font-bold cursor-pointer">2</span>
+<span class="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-gray-500 text-xs font-bold cursor-pointer">3</span>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-high text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- AI Insights Bento Preview (Secondary Section) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-low p-6 rounded-3xl relative overflow-hidden group">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">psychology</span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-primary">Priority Alert</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-white mb-2">Client At-Risk: Elena Rodriguez</h3>
+<p class="text-on-surface-variant text-sm max-w-md">Adherence dropped 40% this week. Nutritional logging has ceased for 72 hours. Recommend immediate intervention.</p>
+</div>
+<div class="mt-4">
+<button class="text-primary text-sm font-bold flex items-center gap-1 group/btn">
+                                Open Intervention Protocol
+                                <span class="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</div>
+<!-- Background Decor -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 bg-error/10 rounded-full blur-3xl group-hover:bg-error/20 transition-all"></div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-3xl flex flex-col items-center justify-center text-center space-y-4">
+<div class="w-16 h-16 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-3xl">trending_up</span>
+</div>
+<div>
+<p class="text-3xl font-headline font-black text-white">12.4%</p>
+<p class="text-[10px] uppercase font-bold tracking-wider text-gray-500">Avg Team Adherence</p>
+</div>
+<p class="text-xs text-on-surface-variant px-4">Up from 11.2% last month. High engagement in endurance programs.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB Suppression (Hiding based on instruction: Suppress on Details/Task screens, showing on dashboard/management) -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-white text-black rounded-2xl shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all duration-300 group">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-90 transition-transform">add</span>
+</button>
+</div>
+</body></html>

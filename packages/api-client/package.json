@@ -1,0 +1,18 @@
+{
+  "name": "@fitness/api-client",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "generate": "npx @hey-api/openapi-ts -i ./openapi.json -o ./src -c @hey-api/client-fetch",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@hey-api/openapi-ts": "^0.46.0"
+  },
+  "dependencies": {
+    "@hey-api/client-fetch": "^0.1.0"
+  }
+}

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carletti Fit - Coach Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-surface-variant": "#c1c6d7",
+                "on-secondary-container": "#bab8b7",
+                "surface-container-high": "#2a2a2a",
+                "on-secondary-fixed": "#1c1b1b",
+                "surface-container-low": "#1c1b1b",
+                "on-error": "#690005",
+                "secondary-fixed-dim": "#c8c6c5",
+                "error": "#ffb4ab",
+                "inverse-on-surface": "#313030",
+                "on-tertiary-fixed-variant": "#005226",
+                "on-tertiary-container": "#003114",
+                "on-primary-fixed-variant": "#003ea6",
+                "primary-fixed": "#dbe1ff",
+                "on-error-container": "#ffdad6",
+                "tertiary-container": "#00a754",
+                "on-primary-container": "#002468",
+                "secondary-fixed": "#e5e2e1",
+                "secondary-container": "#4a4949",
+                "surface-dim": "#131313",
+                "on-surface": "#e5e2e1",
+                "on-background": "#e5e2e1",
+                "surface": "#131313",
+                "tertiary-fixed-dim": "#00e475",
+                "inverse-surface": "#e5e2e1",
+                "inverse-primary": "#0054d8",
+                "surface-variant": "#353534",
+                "on-primary-fixed": "#00184a",
+                "error-container": "#93000a",
+                "background": "#131313",
+                "secondary": "#c8c6c5",
+                "primary-fixed-dim": "#b3c5ff",
+                "surface-tint": "#b3c5ff",
+                "outline-variant": "#414754",
+                "surface-bright": "#393939",
+                "tertiary": "#00e475",
+                "surface-container": "#201f1f",
+                "on-primary": "#002a76",
+                "on-secondary": "#313030",
+                "surface-container-highest": "#353534",
+                "on-tertiary": "#003918",
+                "outline": "#8b90a0",
+                "surface-container-lowest": "#0e0e0e",
+                "on-secondary-fixed-variant": "#474646",
+                "primary-container": "#5f8bff",
+                "primary": "#b3c5ff",
+                "tertiary-fixed": "#62ff96",
+                "on-tertiary-fixed": "#00210b"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #5f8bff 0%, #b3c5ff 100%);
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar Anchor -->
+<aside class="hidden md:flex flex-col h-screen p-4 bg-[#1c1c1c] fixed left-0 top-0 w-64 z-50">
+<div class="flex items-center gap-3 px-2 mb-8">
+<div class="w-10 h-10 kinetic-gradient rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" data-icon="fitness_center">fitness_center</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-white font-headline leading-tight">Coach Portal</h1>
+<p class="text-[10px] text-gray-500 font-label uppercase tracking-widest">Carletti Fit Elite</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-white bg-[#252525] rounded-lg font-manrope font-semibold transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-white hover:bg-[#252525] font-manrope font-semibold transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-white hover:bg-[#252525] font-manrope font-semibold transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span>AI Insights</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-white hover:bg-[#252525] font-manrope font-semibold transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span>Library</span>
+</a>
+</nav>
+<div class="mt-auto pt-6">
+<button class="w-full kinetic-gradient text-on-primary py-3 rounded-xl font-headline font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20 hover:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                New Program
+            </button>
+<div class="mt-6 flex items-center gap-3 px-2">
+<img alt="Coach Avatar" class="w-10 h-10 rounded-full border-2 border-surface-container-highest" data-alt="professional portrait of a fitness coach with short hair and athletic build in a studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ7TNgQmvjube6D5MMmmYs2os8abYpNUT2mfmPyQV1Q_CBCN4LryskqFNXgU7T7En0WtdFPNzkJL-_B-U0fXWk7Z8dqkTFF6ODoWHpybv4miXNbbvjN0TFruW558k1pwQG8i0TpUUEoSIe0CS3QwhPmVZx878J-lL41xXXxXKv9pxyUtF6VZDlkhtqR11u4Caks3vQItkPth0IRjOJbQEszo4pHMHA7E3xDjpzvikMHUAZGbETT_OxkpUBxow0LjbM4QgEXLDJJ74"/>
+<div class="overflow-hidden">
+<p class="text-sm font-bold text-white truncate">Marcus Carletti</p>
+<p class="text-xs text-gray-500 truncate">Elite Tier Coach</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="md:ml-64 min-h-screen pb-24 md:pb-8">
+<!-- TopNavBar Anchor -->
+<header class="flex justify-between items-center px-6 py-4 w-full bg-[#131313] sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<h2 class="text-2xl font-bold tracking-tight text-white font-headline">Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg" data-icon="search">search</span>
+<input class="bg-[#1c1c1c] border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-1 focus:ring-primary text-white" placeholder="Search students..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-gray-400 hover:bg-[#252525] rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-gray-400 hover:bg-[#252525] rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<div class="px-6 py-6 space-y-8 max-w-7xl mx-auto">
+<!-- Key Metric Cards (Bento Grid Style) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-container-low p-6 rounded-2xl flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined" data-icon="group">group</span>
+<span class="text-tertiary text-xs font-bold">+12%</span>
+</div>
+<div>
+<p class="text-gray-500 text-xs font-label uppercase tracking-wider">Active Students</p>
+<h3 class="text-4xl font-extrabold font-headline mt-1 text-white">142</h3>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl flex flex-col justify-between group border-l-4 border-error/50">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-error-container/20 text-error rounded-lg material-symbols-outlined" data-icon="warning">warning</span>
+<span class="text-error text-xs font-bold">Priority</span>
+</div>
+<div>
+<p class="text-gray-500 text-xs font-label uppercase tracking-wider">Students at Risk</p>
+<h3 class="text-4xl font-extrabold font-headline mt-1 text-white">8</h3>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-tertiary/10 text-tertiary rounded-lg material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-tertiary text-xs font-bold">New</span>
+</div>
+<div>
+<p class="text-gray-500 text-xs font-label uppercase tracking-wider">New PRs this week</p>
+<h3 class="text-4xl font-extrabold font-headline mt-1 text-white">24</h3>
+</div>
+</div>
+<div class="kinetic-gradient p-6 rounded-2xl flex flex-col justify-between shadow-xl shadow-primary/20">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-white/20 text-white rounded-lg material-symbols-outlined" data-icon="psychology" data-weight="fill">psychology</span>
+</div>
+<div>
+<p class="text-on-primary/70 text-xs font-label uppercase tracking-wider">Pending AI Insights</p>
+<h3 class="text-4xl font-extrabold font-headline mt-1 text-on-primary">3</h3>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Recent Students Table -->
+<section class="lg:col-span-2 bg-surface-container-low rounded-3xl overflow-hidden">
+<div class="px-6 py-6 flex justify-between items-center">
+<h3 class="text-lg font-bold font-headline text-white">Recent Students</h3>
+<button class="text-primary text-sm font-semibold hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container/50 border-none">
+<th class="px-6 py-4 text-[10px] font-label uppercase tracking-widest text-gray-500">Student</th>
+<th class="px-6 py-4 text-[10px] font-label uppercase tracking-widest text-gray-500">Goal</th>
+<th class="px-6 py-4 text-[10px] font-label uppercase tracking-widest text-gray-500">Status</th>
+<th class="px-6 py-4 text-[10px] font-label uppercase tracking-widest text-gray-500">Adherence</th>
+<th class="px-6 py-4 text-[10px] font-label uppercase tracking-widest text-gray-500">Last Active</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Client" class="w-8 h-8 rounded-full" data-alt="close-up portrait of a determined young man with light beard during a gym break, moody cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoXakumjiHUR6yNctMG5ezZMA0fZ5zJVswSSANRhqAAIbEymAvaWlTzWAHtIpQeq5rljwkILJEpY5aux5jmBSH19OqmOP5z3ZqmYMslnGaZ5Uah_ovyalp7izJMzZEePlTyp_nnURj1Pl42crxWgQ1HlpNsMTKilJugtzG6o4wRc3QAPu8jUUv7j36HaUDclIN3RsXuiplECCqD_ftCA4T3LoqyXceOp04DHMvqaNGp0DV_D2LDWtt5c8IzRZSLOqJZ2VCxMSr34I"/>
+<span class="text-sm font-semibold text-white">Julian D.</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-secondary-container">Hypertrophy</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-[10px] font-bold uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-4">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[94%]"></div>
+</div>
+</td>
+<td class="px-6 py-4 text-xs text-gray-500">2h ago</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Client" class="w-8 h-8 rounded-full" data-alt="portrait of a woman in her 30s with athletic wear in a modern minimalist home gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwrTZ2LMEJzL5evOMq1Y0NkrRcot24pHxF77ZIH52tp9pozKpsV0bf3hTyQwjfxoljf6HmunIEvvtXa08V3f7dZOiciMvqrCLbiDY8ttuycXqRa9G2Yoet7pA0At69oEaD7O7XjcwziT9LWMTlV_qp3_ljx_USGLEAy2SWGNifwbnolFflBOrDYpayqTEcuBVm-6roEu6geerrFg7ngdGzSotn2pHAiWzZPfvRwZ8vgU_93PpxLKAJl1kiU-BAm0YDIq1LWsbiZUk"/>
+<span class="text-sm font-semibold text-white">Sarah M.</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-secondary-container">Fat Loss</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-error-container text-on-error-container rounded-full text-[10px] font-bold uppercase tracking-tighter">At Risk</span>
+</td>
+<td class="px-6 py-4">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error w-[42%]"></div>
+</div>
+</td>
+<td class="px-6 py-4 text-xs text-gray-500">3d ago</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Client" class="w-8 h-8 rounded-full" data-alt="portrait of an older man with silver hair wearing high-performance workout gear, smiling confidently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF8dZREpLKaZ3Yji0npzd-WnXorQCyTHyUxUU5DBLVQzHyTHAlFh1wP7xztDIc22UNfVay1yU7w-cgBScisMaIvuIZEXYRAKXaktJfJLL2Lw-LjOc8KzyhFrSF3MoUkeSvYqvJjVGQ2gCkC7i-ql0Z4NK0ycxLjw9CK0I9Afigc8lpbiLsLvwY0vQOVCTsPj_CGpv1j2Qdct87GIW1rgmtvgVYj3tL7yXajU9biTdYwaAYF_xFZPgHJk6Jw5CsJYoATsEZTKhbKG4"/>
+<span class="text-sm font-semibold text-white">Arthur L.</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-secondary-container">Performance</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-[10px] font-bold uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-4">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[88%]"></div>
+</div>
+</td>
+<td class="px-6 py-4 text-xs text-gray-500">12h ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- AI Insights Preview -->
+<section class="space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold font-headline text-white">AI Insights</h3>
+<span class="px-2 py-0.5 bg-primary/20 text-primary rounded text-[10px] font-bold">LIVE</span>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-high p-4 rounded-2xl border-l-4 border-primary">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="analytics">analytics</span>
+<div>
+<p class="text-white text-sm font-semibold">Julian D. plateaued in Squat</p>
+<p class="text-gray-500 text-xs mt-1">Volume matched for 3 weeks. Suggest deload or intensity pivot.</p>
+<button class="mt-3 text-primary text-xs font-bold flex items-center gap-1 group">
+                                        View Analysis
+                                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-4 rounded-2xl border-l-4 border-error">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error" data-icon="event_busy">event_busy</span>
+<div>
+<p class="text-white text-sm font-semibold">Sarah M. adherence dropped</p>
+<p class="text-gray-500 text-xs mt-1">Missed 3 consecutive workouts. Engagement required.</p>
+<button class="mt-3 text-error text-xs font-bold flex items-center gap-1 group">
+                                        Message Sarah
+                                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="mail">mail</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-4 rounded-2xl border-l-4 border-tertiary">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<p class="text-white text-sm font-semibold">New PR Opportunity</p>
+<p class="text-gray-500 text-xs mt-1">Arthur L. RPE suggests 5kg increase on Deadlift is ready.</p>
+<button class="mt-3 text-tertiary text-xs font-bold flex items-center gap-1 group">
+                                        Update Plan
+                                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-on-surface text-sm font-semibold rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+                            View All Insights
+                        </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Anchor (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/60 backdrop-blur-xl rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
+<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#5f8bff] to-[#b3c5ff] text-white rounded-2xl p-2 px-4 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-inter text-[10px] uppercase tracking-wider mt-1">Today</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 p-2 hover:text-white active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-inter text-[10px] uppercase tracking-wider mt-1">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 p-2 hover:text-white active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-inter text-[10px] uppercase tracking-wider mt-1">Plan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 p-2 hover:text-white active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] uppercase tracking-wider mt-1">Profile</span>
+</a>
+</nav>
+<!-- Contextual FAB (Only on Dashboard) -->
+<button class="fixed right-6 bottom-24 md:bottom-8 w-14 h-14 kinetic-gradient rounded-full flex items-center justify-center text-on-primary shadow-2xl shadow-primary/40 hover:scale-110 active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-2xl" data-icon="add">add</span>
+</button>
+</body></html>

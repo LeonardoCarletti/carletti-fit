@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\leonardo.carletti\OneDrive\Documentos\AI Project\carletti-fit\apps\backend\dump_openapi.py", line 8, in <module>
+    from app.main import app
+  File "C:\Users\leonardo.carletti\OneDrive\Documentos\AI Project\carletti-fit\apps\backend\app\main.py", line 2, in <module>
+    from app.api.v1 import auth, tenants, workouts, metrics, nutrition, ai, integrations, clients
+  File "C:\Users\leonardo.carletti\OneDrive\Documentos\AI Project\carletti-fit\apps\backend\app\api\v1\auth.py", line 4, in <module>
+    from app.core.deps import get_db
+  File "C:\Users\leonardo.carletti\OneDrive\Documentos\AI Project\carletti-fit\apps\backend\app\core\deps.py", line 8, in <module>
+    from app.core.security import ALGORITHM
+ImportError: cannot import name 'ALGORITHM' from 'app.core.security' (C:\Users\leonardo.carletti\OneDrive\Documentos\AI Project\carletti-fit\apps\backend\app\core\security.py)
