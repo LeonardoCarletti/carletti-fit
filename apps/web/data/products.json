@@ -1,0 +1,73 @@
+[
+  {
+    "id": "programa-hipertrofia-elite",
+    "name": "Programa Hipertrofia Elite",
+    "slug": "programa-hipertrofia-elite",
+    "category": "programas",
+    "price": 497,
+    "originalPrice": 697,
+    "description": "Programa completo de 12 semanas com periodização avançada, ajustes semanais via IA e acompanhamento de performance para ganho de massa muscular.",
+    "highlights": ["12 semanas de periodização", "Ajustes semanais com IA", "Vídeos de execução", "Suporte via app"],
+    "image": "/products/programa-hipertrofia-elite.jpg",
+    "featured": true,
+    "badge": "Mais vendido"
+  },
+  {
+    "id": "protocolo-emagrecimento",
+    "name": "Protocolo Emagrecimento Inteligente",
+    "slug": "protocolo-emagrecimento",
+    "category": "programas",
+    "price": 397,
+    "description": "Protocolo estruturado para perda de gordura com preservação muscular. Treino, nutrição e métricas de saúde integradas.",
+    "highlights": ["8 semanas de protocolo", "Cardio estratégico", "Plano alimentar flexível", "Check-ins semanais"],
+    "image": "/products/protocolo-emagrecimento.jpg",
+    "featured": true,
+    "badge": "Novo"
+  },
+  {
+    "id": "consultoria-online-premium",
+    "name": "Consultoria Online Premium",
+    "slug": "consultoria-online-premium",
+    "category": "consultoria",
+    "price": 297,
+    "description": "Acompanhamento mensal individual com o coach. Treino personalizado, revisão de forma e suporte direto para atletas que buscam performance máxima.",
+    "highlights": ["1 sessão de onboarding", "Treino 100% personalizado", "Suporte via WhatsApp", "Revisão quinzenal"],
+    "image": "/products/consultoria-online-premium.jpg",
+    "featured": true
+  },
+  {
+    "id": "guia-nutricao-performance",
+    "name": "Guia de Nutrição Performance",
+    "slug": "guia-nutricao-performance",
+    "category": "digital",
+    "price": 97,
+    "description": "E-book completo com estratégias de nutrição para hipertrofia, cutting e manutenção. Receitas, macros e timing nutricional.",
+    "highlights": ["80+ páginas", "Receitas práticas", "Calculadora de macros", "Acesso vitalício"],
+    "image": "/products/guia-nutricao-performance.jpg",
+    "featured": false
+  },
+  {
+    "id": "plano-treino-personalizado",
+    "name": "Plano de Treino Personalizado",
+    "slug": "plano-treino-personalizado",
+    "category": "consultoria",
+    "price": 197,
+    "description": "Treino montado sob medida para seu objetivo, nível e equipamentos disponíveis. Entrega em até 48h com vídeos de referência.",
+    "highlights": ["Anamnese completa", "Entrega em 48h", "Vídeos de execução", "1 revisão inclusa"],
+    "image": "/products/plano-treino-personalizado.jpg",
+    "featured": false
+  },
+  {
+    "id": "acesso-carletti-fit-coach",
+    "name": "Carletti Fit — Plano Coach",
+    "slug": "acesso-carletti-fit-coach",
+    "category": "digital",
+    "price": 149,
+    "originalPrice": 199,
+    "description": "Assinatura mensal da plataforma SaaS para coaches. CRM, treinos, IA insights e gestão de alunos em um só lugar.",
+    "highlights": ["Alunos ilimitados", "IA de insights", "CRM integrado", "Dashboard de métricas"],
+    "image": "/products/acesso-carletti-fit-coach.jpg",
+    "featured": false,
+    "badge": "SaaS"
+  }
+]

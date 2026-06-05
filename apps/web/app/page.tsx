@@ -11,6 +11,7 @@ export default function LandingPage() {
             <Link className="text-gray-400 hover:bg-[#252525] transition-colors px-3 py-1 rounded-lg" href="#features">Features</Link>
             <Link className="text-gray-400 hover:bg-[#252525] transition-colors px-3 py-1 rounded-lg" href="#how-it-works">How It Works</Link>
             <Link className="text-gray-400 hover:bg-[#252525] transition-colors px-3 py-1 rounded-lg" href="#testimonials">Success Stories</Link>
+            <Link className="text-gray-400 hover:bg-[#252525] transition-colors px-3 py-1 rounded-lg" href="/loja">Loja</Link>
           </div>
         </div>
         <div className="flex items-center gap-4">

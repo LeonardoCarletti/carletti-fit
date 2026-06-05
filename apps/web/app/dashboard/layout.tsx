@@ -2,7 +2,28 @@
 import React from 'react';
 import Link from 'next/link';
 import { useAuth } from '../providers';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+
+function NavLink({ href, icon, label }: { href: string; icon: string; label: string }) {
+  const pathname = usePathname();
+  const isActive = pathname === href || (href !== '/dashboard' && pathname.startsWith(href));
+
+  return (
+    <Link
+      href={href}
+      className={`flex items-center gap-3 px-3 py-2.5 font-headline font-bold rounded-xl transition-all duration-200 group ${
+        isActive
+          ? 'text-white bg-[#1c1c1c] border border-white/5'
+          : 'text-gray-500 hover:text-white hover:bg-[#1c1c1c]'
+      }`}
+    >
+      <span className={`material-symbols-outlined ${isActive ? 'text-primary' : ''}`} data-icon={icon}>
+        {icon}
+      </span>
+      <span>{label}</span>
+    </Link>
+  );
+}
 
 export default function DashboardLayout({
   children,
@@ -11,6 +32,7 @@ export default function DashboardLayout({
 }) {
   const { logout, user } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleLogout = () => {
     logout();
@@ -32,26 +54,15 @@ export default function DashboardLayout({
         </div>
 
         <nav className="flex-1 space-y-1">
-          <Link href="/dashboard" className="flex items-center gap-3 px-3 py-2.5 text-white bg-[#1c1c1c] rounded-xl font-headline font-bold transition-all duration-200 group border border-white/5">
-            <span className="material-symbols-outlined text-primary" data-icon="dashboard">dashboard</span>
-            <span>Dashboard</span>
-          </Link>
-          <Link href="/dashboard/clients" className="flex items-center gap-3 px-3 py-2.5 text-gray-500 font-headline font-bold hover:text-white hover:bg-[#1c1c1c] rounded-xl transition-all duration-200 group">
-            <span className="material-symbols-outlined" data-icon="group">group</span>
-            <span>Clients</span>
-          </Link>
-          <Link href="/dashboard/workouts" className="flex items-center gap-3 px-3 py-2.5 text-gray-500 font-headline font-bold hover:text-white hover:bg-[#1c1c1c] rounded-xl transition-all duration-200 group">
-            <span className="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
-            <span>Workouts</span>
-          </Link>
+          <NavLink href="/dashboard" icon="dashboard" label="Dashboard" />
+          <NavLink href="/dashboard/clients" icon="group" label="Clients" />
+          <NavLink href="/dashboard/workouts" icon="fitness_center" label="Workouts" />
+          <NavLink href="/dashboard/store" icon="store" label="Loja" />
           <Link href="#" className="flex items-center gap-3 px-3 py-2.5 text-gray-500 font-headline font-bold hover:text-white hover:bg-[#1c1c1c] rounded-xl transition-all duration-200 group">
             <span className="material-symbols-outlined" data-icon="psychology">psychology</span>
             <span>AI Insights</span>
           </Link>
-          <Link href="/workout" className="flex items-center gap-3 px-3 py-2.5 text-gray-500 font-headline font-bold hover:text-white hover:bg-[#1c1c1c] rounded-xl transition-all duration-200 group">
-            <span className="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
-            <span>Mobile View</span>
-          </Link>
+          <NavLink href="/workout" icon="smartphone" label="Mobile View" />
         </nav>
 
         <div className="mt-auto pt-6 border-t border-white/5">
@@ -111,16 +122,20 @@ export default function DashboardLayout({
       </main>
 
       {/* BottomNavBar (Mobile Only) */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#131313]/90 backdrop-blur-xl border-t border-white/5">
-        <Link href="/dashboard" className="flex flex-col items-center justify-center text-primary">
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#131313]/90 backdrop-blur-xl border-t border-white/5">
+        <Link href="/dashboard" className={`flex flex-col items-center justify-center ${pathname === '/dashboard' ? 'text-primary' : 'text-gray-500'}`}>
            <span className="material-symbols-outlined">dashboard</span>
            <span className="font-bold text-[9px] uppercase tracking-widest mt-1">Home</span>
         </Link>
-        <Link href="/dashboard/clients" className="flex flex-col items-center justify-center text-gray-500">
+        <Link href="/dashboard/clients" className={`flex flex-col items-center justify-center ${pathname.startsWith('/dashboard/clients') ? 'text-primary' : 'text-gray-500'}`}>
            <span className="material-symbols-outlined">group</span>
            <span className="font-bold text-[9px] uppercase tracking-widest mt-1">Clients</span>
         </Link>
-        <Link href="/workout" className="flex flex-col items-center justify-center text-gray-500">
+        <Link href="/dashboard/store" className={`flex flex-col items-center justify-center ${pathname.startsWith('/dashboard/store') ? 'text-primary' : 'text-gray-500'}`}>
+           <span className="material-symbols-outlined">store</span>
+           <span className="font-bold text-[9px] uppercase tracking-widest mt-1">Loja</span>
+        </Link>
+        <Link href="/workout" className={`flex flex-col items-center justify-center ${pathname === '/workout' ? 'text-primary' : 'text-gray-500'}`}>
            <span className="material-symbols-outlined">fitness_center</span>
            <span className="font-bold text-[9px] uppercase tracking-widest mt-1">Workout</span>
         </Link>
