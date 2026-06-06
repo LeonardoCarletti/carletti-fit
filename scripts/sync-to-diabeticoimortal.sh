@@ -1,24 +1,21 @@
 #!/bin/bash
-# Sincroniza apps/landing → repositório diabeticoimortal (conectado na Vercel)
-# Rode no seu Mac, na pasta do repositório diabeticoimortal:
-#
-#   git clone git@github.com:LeonardoCarletti/diabeticoimortal.git
-#   cd diabeticoimortal
-#   bash /caminho/para/sync-to-diabeticoimortal.sh
-#
-# Ou copie manualmente o conteúdo de carletti-fit/apps/landing para a raiz do diabeticoimortal.
-
+# ⚠️ CUIDADO: este script SUBSTITUI o projeto inteiro.
+# Para manter o site existente, use integrate-store-only.sh
 set -e
 
 SOURCE="${1:-../carletti-fit/apps/landing}"
 
 if [ ! -f "$SOURCE/package.json" ]; then
   echo "❌ Pasta fonte não encontrada: $SOURCE"
-  echo "   Clone carletti-fit e passe o caminho: bash sync-to-diabeticoimortal.sh /path/to/carletti-fit/apps/landing"
   exit 1
 fi
 
-echo "📦 Copiando de $SOURCE para $(pwd) ..."
+echo "⚠️  ATENÇÃO: este script substitui TODOS os arquivos do projeto."
+echo "    Para adicionar só a loja, use: integrate-store-only.sh"
+echo ""
+read -p "Continuar? (s/N) " -n 1 -r
+echo
+[[ $REPLY =~ ^[Ss]$ ]] || exit 0
 
 rsync -av --delete \
   --exclude node_modules \
@@ -26,10 +23,4 @@ rsync -av --delete \
   --exclude .vercel \
   "$SOURCE/" ./
 
-echo ""
-echo "✅ Arquivos copiados. Agora rode:"
-echo "   git add -A"
-echo "   git commit -m 'feat: adicionar loja de produtos Carletti Fit'"
-echo "   git push"
-echo ""
-echo "A Vercel vai fazer deploy automaticamente em diabeticoimortal.fit"
+echo "✅ Copiado. Rode: git add -A && git commit -m 'feat: site com loja' && git push"
