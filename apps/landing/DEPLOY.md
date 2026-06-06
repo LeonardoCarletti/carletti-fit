@@ -2,30 +2,51 @@
 
 **Projeto Vercel:** https://vercel.com/leeocarletti-1131s-projects/diabeticoimortal
 
-O código da loja está em `apps/landing/` na branch `master` do repo `LeonardoCarletti/carletti-fit`.
+**Repositório conectado na Vercel:** `LeonardoCarletti/diabeticoimortal` (privado)
 
-## Conectar e publicar (faça uma vez)
+## Situação
 
-O projeto Vercel ainda mostra **"Connect Git Repository"** — ou seja, não está ligado ao GitHub. Siga:
+O código da loja está em **`LeonardoCarletti/carletti-fit`** → pasta `apps/landing/`.
 
-1. Abra: https://vercel.com/leeocarletti-1131s-projects/diabeticoimortal/settings/git
-2. Clique em **Connect Git Repository**
-3. Escolha **GitHub** → repositório **`LeonardoCarletti/carletti-fit`**
-4. Em **Settings → General** configure:
-   - **Production Branch:** `master`
-   - **Root Directory:** `apps/landing` ← importante
-   - **Framework Preset:** Vite
-5. Vá em **Deployments** → **Redeploy** (ou aguarde o deploy automático)
+A Vercel está ligada ao repo **`diabeticoimortal`** (outro repositório). Por isso o site em produção ainda não mostra a loja.
 
-## Verificar se funcionou
+## Opção A — Sincronizar para o repo diabeticoimortal (recomendado)
 
-Após o deploy, estas URLs devem abrir a **nova** loja:
+No seu Mac:
+
+```bash
+# 1. Clone os dois repos
+git clone https://github.com/LeonardoCarletti/carletti-fit.git
+git clone https://github.com/LeonardoCarletti/diabeticoimortal.git
+
+# 2. Entre no repo da Vercel
+cd diabeticoimortal
+
+# 3. Rode o script de sincronização
+bash ../carletti-fit/scripts/sync-to-diabeticoimortal.sh ../carletti-fit/apps/landing
+
+# 4. Publique
+git add -A
+git commit -m "feat: adicionar loja de produtos Carletti Fit"
+git push
+```
+
+A Vercel faz deploy automático. Aguarde 1–2 min e acesse https://diabeticoimortal.fit/loja
+
+## Opção B — Trocar o repo na Vercel
+
+Se preferir manter tudo só no `carletti-fit`:
+
+1. https://vercel.com/leeocarletti-1131s-projects/diabeticoimortal/settings/git
+2. **Disconnect** → **Connect** → `LeonardoCarletti/carletti-fit`
+3. **Settings → General** → **Root Directory:** `apps/landing`
+4. **Redeploy**
+
+## Verificar
 
 - https://diabeticoimortal.fit/loja
 - https://diabeticoimortal.fit/loja/ferramentas/calculadora-carga-glicemica
 
-Se `/loja` mostrar a landing antiga sem menu "Loja", o Root Directory está errado ou o redeploy não rodou.
-
 ## WhatsApp
 
-Edite `src/data/products.ts` → `WHATSAPP_NUMBER` com seu número (ex: `5511999887766`).
+Edite `src/data/products.ts` → `WHATSAPP_NUMBER`
