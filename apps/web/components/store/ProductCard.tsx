@@ -1,6 +1,7 @@
 "use client";
 
-import { Product, formatPrice } from "../../lib/products";
+import Link from "next/link";
+import { Product, formatPrice, typeLabels } from "../../lib/products";
 import { ProductImage } from "./ProductImage";
 
 interface ProductCardProps {
@@ -33,6 +34,9 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
             -{Math.round(((product.originalPrice! - product.price) / product.originalPrice!) * 100)}%
           </span>
         )}
+        <span className="absolute bottom-3 right-3 px-2 py-1 bg-black/60 text-gray-300 rounded-lg text-[10px] font-bold uppercase tracking-widest">
+          {typeLabels[product.type]}
+        </span>
       </div>
 
       <div className="p-5 flex flex-col flex-1">
@@ -56,15 +60,27 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
               {formatPrice(product.price)}
             </span>
           </div>
-          <button
-            className="p-2.5 bg-primary/10 text-primary rounded-xl group-hover:bg-primary group-hover:text-white transition-all"
-            onClick={(e) => {
-              e.stopPropagation();
-              onSelect(product);
-            }}
-          >
-            <span className="material-symbols-outlined text-lg">add_shopping_cart</span>
-          </button>
+          <div className="flex gap-2">
+            {product.previewPath && (
+              <Link
+                href={product.previewPath}
+                onClick={(e) => e.stopPropagation()}
+                className="p-2.5 bg-white/5 text-gray-400 rounded-xl hover:bg-white/10 hover:text-white transition-all"
+                title="Ver demonstração"
+              >
+                <span className="material-symbols-outlined text-lg">visibility</span>
+              </Link>
+            )}
+            <button
+              className="p-2.5 bg-primary/10 text-primary rounded-xl group-hover:bg-primary group-hover:text-white transition-all"
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelect(product);
+              }}
+            >
+              <span className="material-symbols-outlined text-lg">add_shopping_cart</span>
+            </button>
+          </div>
         </div>
       </div>
     </article>

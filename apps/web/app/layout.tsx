@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,add_shopping_cart,analytics,bolt,calendar_today,calendar_upcoming,calendar_view_week,cancel,chat,check_circle,chevron_right,close,dashboard,delete,edit,filter_list,fitness_center,group,home,layers,logout,menu_book,notifications,notifications_active,person_add,person_celebrate,play_arrow,play_circle,psychology,schedule,settings,shopping_bag,smartphone,star,store,trending_up,verified,visibility,warning" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,add_shopping_cart,analytics,arrow_back,auto_stories,bolt,calculate,calendar_today,calendar_upcoming,calendar_view_week,cancel,chat,check_circle,chevron_right,close,construction,dashboard,delete,edit,filter_list,fitness_center,group,home,inventory_2,layers,logout,menu_book,notifications,notifications_active,person_add,person_celebrate,play_arrow,play_circle,psychology,schedule,settings,shopping_bag,smartphone,star,store,storefront,trending_up,verified,visibility,warning" />
       </head>
       <body className={`${manrope.variable} ${inter.variable} font-sans antialiased text-white bg-[#0a0a0a]`}>
          <AuthProvider>

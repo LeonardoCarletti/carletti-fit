@@ -1,12 +1,14 @@
 import productsData from "../data/products.json";
 
-export type ProductCategory = "programas" | "consultoria" | "digital" | "todos";
+export type ProductCategory = "guias" | "ferramentas" | "ebooks" | "todos";
+export type ProductType = "pdf" | "interactive" | "bundle";
 
 export interface Product {
   id: string;
   name: string;
   slug: string;
   category: Exclude<ProductCategory, "todos">;
+  type: ProductType;
   price: number;
   originalPrice?: number;
   description: string;
@@ -14,17 +16,26 @@ export interface Product {
   image: string;
   featured: boolean;
   badge?: string;
+  assetPath?: string;
+  previewPath?: string;
+  bundleItems?: string[];
 }
 
 export const products: Product[] = productsData as Product[];
 
 export const categoryLabels: Record<Exclude<ProductCategory, "todos">, string> = {
-  programas: "Programas",
-  consultoria: "Consultoria",
-  digital: "Digital",
+  guias: "Guias",
+  ferramentas: "Ferramentas",
+  ebooks: "E-books",
 };
 
-export const allCategories: ProductCategory[] = ["todos", "programas", "consultoria", "digital"];
+export const typeLabels: Record<ProductType, string> = {
+  pdf: "PDF",
+  interactive: "Interativo",
+  bundle: "Pacote",
+};
+
+export const allCategories: ProductCategory[] = ["todos", "guias", "ferramentas", "ebooks"];
 
 export function formatPrice(value: number): string {
   return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -41,6 +52,13 @@ export function getFeaturedProducts(): Product[] {
 
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
+}
+
+export function getBundleProducts(product: Product): Product[] {
+  if (!product.bundleItems) return [];
+  return product.bundleItems
+    .map((id) => products.find((p) => p.id === id))
+    .filter((p): p is Product => Boolean(p));
 }
 
 export const WHATSAPP_NUMBER = "5511999999999";

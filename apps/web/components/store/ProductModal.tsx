@@ -1,6 +1,7 @@
 "use client";
 
-import { Product, formatPrice, getPurchaseUrl } from "../../lib/products";
+import Link from "next/link";
+import { Product, formatPrice, getBundleProducts, getPurchaseUrl, typeLabels } from "../../lib/products";
 import { ProductImage } from "./ProductImage";
 
 interface ProductModalProps {
@@ -12,6 +13,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
   if (!product) return null;
 
   const hasDiscount = product.originalPrice && product.originalPrice > product.price;
+  const bundleProducts = getBundleProducts(product);
 
   return (
     <div
@@ -44,9 +46,15 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
 
         <div className="p-8 space-y-6">
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
-              {product.category}
-            </span>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
+                {product.category}
+              </span>
+              <span className="text-gray-600">·</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                {typeLabels[product.type]}
+              </span>
+            </div>
             <h2 className="text-3xl font-extrabold font-headline text-white mt-1">
               {product.name}
             </h2>
@@ -56,7 +64,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
 
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500">
-              O que está incluso
+              {product.type === "bundle" ? "O pacote inclui" : "O que está incluso"}
             </h4>
             <ul className="space-y-2">
               {product.highlights.map((item) => (
@@ -67,6 +75,17 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
               ))}
             </ul>
           </div>
+
+          {bundleProducts.length > 0 && (
+            <div className="bg-white/5 rounded-xl p-4 space-y-2">
+              {bundleProducts.map((item) => (
+                <div key={item.id} className="flex items-center gap-3 text-sm text-gray-300">
+                  <span className="material-symbols-outlined text-primary text-lg">inventory_2</span>
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          )}
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-white/5">
             <div>
@@ -79,15 +98,26 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
                 {formatPrice(product.price)}
               </span>
             </div>
-            <a
-              href={getPurchaseUrl(product)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 bg-gradient-to-tr from-[#5f8bff] to-[#b3c5ff] text-[#002468] font-bold rounded-xl hover:shadow-[0_0_30px_rgba(95,139,255,0.4)] transition-all flex items-center justify-center gap-2"
-            >
-              <span className="material-symbols-outlined">chat</span>
-              Comprar via WhatsApp
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              {product.previewPath && (
+                <Link
+                  href={product.previewPath}
+                  className="px-6 py-4 bg-white/5 text-white font-bold rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2"
+                >
+                  <span className="material-symbols-outlined">visibility</span>
+                  Ver demo
+                </Link>
+              )}
+              <a
+                href={getPurchaseUrl(product)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-gradient-to-tr from-[#5f8bff] to-[#b3c5ff] text-[#002468] font-bold rounded-xl hover:shadow-[0_0_30px_rgba(95,139,255,0.4)] transition-all flex items-center justify-center gap-2"
+              >
+                <span className="material-symbols-outlined">chat</span>
+                Comprar via WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>

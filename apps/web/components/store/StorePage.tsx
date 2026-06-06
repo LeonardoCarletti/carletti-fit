@@ -51,8 +51,8 @@ export function StorePage() {
               </span>
             </h1>
             <p className="text-gray-400 font-body text-lg">
-              Programas de treino, consultoria e materiais digitais criados com a mesma precisão
-              da plataforma Carletti Fit.
+              Guias nutricionais, ferramentas interativas e e-books criados com a mesma precisão
+              científica da plataforma Carletti Fit.
             </p>
           </div>
           <div className="flex gap-6">

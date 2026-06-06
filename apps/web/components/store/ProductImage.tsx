@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 const categoryIcons: Record<string, string> = {
-  programas: "fitness_center",
-  consultoria: "person_celebrate",
-  digital: "menu_book",
+  guias: "menu_book",
+  ferramentas: "calculate",
+  ebooks: "auto_stories",
 };
 
 interface ProductImageProps {
